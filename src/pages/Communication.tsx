@@ -268,7 +268,7 @@ const Communication = () => {
                     <div className="p-4 bg-surface-grey">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
-                          <h4 className="font-medium text-primary-blue mb-1">
+                          <h4 className="font-medium text-primary-blue mb-1 text-zinc-950">
                             {discussion.documentTitle}
                           </h4>
                           <div className="flex items-center space-x-2 mb-2">
@@ -299,7 +299,7 @@ const Communication = () => {
                         <div>
                           <span className="text-xs font-medium text-success-green">Acknowledged:</span>
                           <div className="flex flex-wrap gap-1 mt-1">
-                            {discussion.acknowledged.map((dept, index) => <Badge key={index} className="text-xs text-green-800 bg-lime-100">
+                            {discussion.acknowledged.map((dept, index) => <Badge key={index} className="text-xs text-green-800 bg-neutral-50 mx-0">
                                 {dept}
                               </Badge>)}
                           </div>
@@ -307,7 +307,7 @@ const Communication = () => {
                         <div>
                           <span className="text-xs font-medium text-warning-orange">Pending:</span>
                           <div className="flex flex-wrap gap-1 mt-1">
-                            {discussion.pendingAck.map((dept, index) => <Badge key={index} className="text-xs bg-orange-100 text-orange-800">
+                            {discussion.pendingAck.map((dept, index) => <Badge key={index} className="text-xs text-orange-800 bg-neutral-50">
                                 {dept}
                               </Badge>)}
                           </div>
