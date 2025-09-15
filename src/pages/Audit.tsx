@@ -5,128 +5,103 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 const Audit = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAction, setSelectedAction] = useState("all");
   const [selectedDept, setSelectedDept] = useState("all");
-
-  const routingLogs = [
-    {
-      id: 1,
-      document: "Emergency Response Protocol v3.2",
-      primaryDept: "Safety",
-      secondaryDepts: ["Operations", "HR"],
-      confidence: 94.7,
-      processingTime: "2.3 min",
-      reasoning: "Contains safety audit findings requiring compliance review and operational coordination",
-      status: "approved",
-      timestamp: "2024-01-15 14:30",
-    },
-    {
-      id: 2,
-      document: "Budget Request - Infrastructure",
-      primaryDept: "Finance",
-      secondaryDepts: ["Engineering"],
-      confidence: 98.2,
-      processingTime: "1.8 min",
-      reasoning: "Financial document with engineering cost implications for infrastructure projects",
-      status: "approved",
-      timestamp: "2024-01-15 13:45",
-    },
-    {
-      id: 3,
-      document: "Track Maintenance Protocol",
-      primaryDept: "Engineering",
-      secondaryDepts: ["Safety", "Operations"],
-      confidence: 89.5,
-      processingTime: "3.1 min",
-      reasoning: "Technical maintenance procedure requiring safety compliance and operational scheduling",
-      status: "modified",
-      timestamp: "2024-01-15 12:20",
-    },
-  ];
-
-  const auditLogs = [
-    {
-      id: 1,
-      timestamp: "2024-01-15 15:30:00",
-      action: "Document Uploaded",
-      document: "Emergency Protocol v2",
-      user: "Rajesh Kumar",
-      department: "Safety",
-      status: "Completed",
-      details: "Original file uploaded with bilingual content",
-    },
-    {
-      id: 2,
-      timestamp: "2024-01-15 15:28:45",
-      action: "AI Classification",
-      document: "Emergency Protocol v2",
-      user: "System AI",
-      department: "System",
-      status: "Completed",
-      details: "Classified as Safety-Critical with 94.7% confidence",
-    },
-    {
-      id: 3,
-      timestamp: "2024-01-15 15:25:12",
-      action: "Document Viewed",
-      document: "Budget Allocation Q4",
-      user: "Priya Nair",
-      department: "Finance",
-      status: "Completed",
-      details: "Full document review completed",
-    },
-    {
-      id: 4,
-      timestamp: "2024-01-15 15:20:00",
-      action: "Approval Given",
-      document: "Staff Training Module",
-      user: "Manager Sarah",
-      department: "HR",
-      status: "Completed",
-      details: "Approved with manager notes",
-    },
-    {
-      id: 5,
-      timestamp: "2024-01-15 15:15:33",
-      action: "Comment Added",
-      document: "Track Maintenance Guide",
-      user: "Engineer John",
-      department: "Engineering",
-      status: "Completed",
-      details: "Technical review comment added",
-    },
-  ];
-
-  const anomalies = [
-    {
-      id: 1,
-      type: "Unusual Access",
-      description: "Document accessed outside normal hours",
-      severity: "Medium",
-      time: "2024-01-15 02:30",
-      user: "System Admin",
-    },
-    {
-      id: 2,
-      type: "Processing Delay",
-      description: "Document processing took 3x longer than average",
-      severity: "Low",
-      time: "2024-01-15 11:45",
-      user: "Auto-Detected",
-    },
-  ];
-
+  const routingLogs = [{
+    id: 1,
+    document: "Emergency Response Protocol v3.2",
+    primaryDept: "Safety",
+    secondaryDepts: ["Operations", "HR"],
+    confidence: 94.7,
+    processingTime: "2.3 min",
+    reasoning: "Contains safety audit findings requiring compliance review and operational coordination",
+    status: "approved",
+    timestamp: "2024-01-15 14:30"
+  }, {
+    id: 2,
+    document: "Budget Request - Infrastructure",
+    primaryDept: "Finance",
+    secondaryDepts: ["Engineering"],
+    confidence: 98.2,
+    processingTime: "1.8 min",
+    reasoning: "Financial document with engineering cost implications for infrastructure projects",
+    status: "approved",
+    timestamp: "2024-01-15 13:45"
+  }, {
+    id: 3,
+    document: "Track Maintenance Protocol",
+    primaryDept: "Engineering",
+    secondaryDepts: ["Safety", "Operations"],
+    confidence: 89.5,
+    processingTime: "3.1 min",
+    reasoning: "Technical maintenance procedure requiring safety compliance and operational scheduling",
+    status: "modified",
+    timestamp: "2024-01-15 12:20"
+  }];
+  const auditLogs = [{
+    id: 1,
+    timestamp: "2024-01-15 15:30:00",
+    action: "Document Uploaded",
+    document: "Emergency Protocol v2",
+    user: "Rajesh Kumar",
+    department: "Safety",
+    status: "Completed",
+    details: "Original file uploaded with bilingual content"
+  }, {
+    id: 2,
+    timestamp: "2024-01-15 15:28:45",
+    action: "AI Classification",
+    document: "Emergency Protocol v2",
+    user: "System AI",
+    department: "System",
+    status: "Completed",
+    details: "Classified as Safety-Critical with 94.7% confidence"
+  }, {
+    id: 3,
+    timestamp: "2024-01-15 15:25:12",
+    action: "Document Viewed",
+    document: "Budget Allocation Q4",
+    user: "Priya Nair",
+    department: "Finance",
+    status: "Completed",
+    details: "Full document review completed"
+  }, {
+    id: 4,
+    timestamp: "2024-01-15 15:20:00",
+    action: "Approval Given",
+    document: "Staff Training Module",
+    user: "Manager Sarah",
+    department: "HR",
+    status: "Completed",
+    details: "Approved with manager notes"
+  }, {
+    id: 5,
+    timestamp: "2024-01-15 15:15:33",
+    action: "Comment Added",
+    document: "Track Maintenance Guide",
+    user: "Engineer John",
+    department: "Engineering",
+    status: "Completed",
+    details: "Technical review comment added"
+  }];
+  const anomalies = [{
+    id: 1,
+    type: "Unusual Access",
+    description: "Document accessed outside normal hours",
+    severity: "Medium",
+    time: "2024-01-15 02:30",
+    user: "System Admin"
+  }, {
+    id: 2,
+    type: "Processing Delay",
+    description: "Document processing took 3x longer than average",
+    severity: "Low",
+    time: "2024-01-15 11:45",
+    user: "Auto-Detected"
+  }];
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "completed":
@@ -139,7 +114,6 @@ const Audit = () => {
         return "status-neutral";
     }
   };
-
   const getSeverityColor = (severity: string) => {
     switch (severity.toLowerCase()) {
       case "high":
@@ -152,9 +126,7 @@ const Audit = () => {
         return "bg-gray-100 text-gray-800";
     }
   };
-
-  return (
-    <div className="space-y-6 animate-fade-in">
+  return <div className="space-y-6 animate-fade-in">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
         <div>
@@ -178,13 +150,12 @@ const Audit = () => {
         <CardHeader>
           <CardTitle className="flex items-center space-x-2 text-teal-accent">
             <TrendingUp className="w-5 h-5" />
-            <span>Intelligent Document Routing</span>
+            <span className="text-neutral-950">Intelligent Document Routing</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {routingLogs.map((log) => (
-              <div key={log.id} className="p-4 border border-border rounded-lg hover:bg-surface-grey transition-smooth">
+            {routingLogs.map(log => <div key={log.id} className="p-4 border border-border rounded-lg hover:bg-surface-grey transition-smooth">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
                     <h4 className="font-medium text-primary-blue">{log.document}</h4>
@@ -209,11 +180,9 @@ const Audit = () => {
                   <div>
                     <span className="text-sm font-medium">Secondary Departments:</span>
                     <div className="ml-2 inline-flex space-x-1">
-                      {log.secondaryDepts.map((dept, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                      {log.secondaryDepts.map((dept, index) => <Badge key={index} variant="outline" className="text-xs">
                           {dept}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                   </div>
                 </div>
@@ -227,8 +196,7 @@ const Audit = () => {
                   <Button size="sm" variant="outline">Modify Routing</Button>
                   <Button size="sm" className="btn-secondary">View Details</Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </CardContent>
       </Card>
@@ -243,12 +211,7 @@ const Audit = () => {
           <div className="flex items-center space-x-4 mt-4">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-text-muted" />
-              <Input
-                placeholder="Search audit logs..."
-                className="pl-10"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
+              <Input placeholder="Search audit logs..." className="pl-10" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
             </div>
             <Select value={selectedAction} onValueChange={setSelectedAction}>
               <SelectTrigger className="w-48">
@@ -291,8 +254,7 @@ const Audit = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {auditLogs.map((log) => (
-                  <TableRow key={log.id} className="hover:bg-surface-grey">
+                {auditLogs.map(log => <TableRow key={log.id} className="hover:bg-surface-grey">
                     <TableCell className="font-mono text-xs">
                       {log.timestamp}
                     </TableCell>
@@ -319,16 +281,13 @@ const Audit = () => {
                     <TableCell className="text-sm text-text-muted max-w-xs truncate">
                       {log.details}
                     </TableCell>
-                  </TableRow>
-                ))}
+                  </TableRow>)}
               </TableBody>
             </Table>
           </div>
         </CardContent>
       </Card>
 
-    </div>
-  );
+    </div>;
 };
-
 export default Audit;
