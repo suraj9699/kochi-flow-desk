@@ -182,36 +182,6 @@ const Documents = () => {
         </CardContent>
       </Card>
 
-      {/* Compliance Tracker */}
-      <Card className="metro-card border-teal-accent/20">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-teal-accent">
-            <AlertCircle className="w-5 h-5" />
-            <span>Compliance Tracker</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center justify-between">
-            <div className="text-sm">
-              <span className="font-medium">Government Directives This Month:</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-text-dark">{complianceStats.received}</div>
-                <div className="text-xs text-text-muted">Received</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-success-green">{complianceStats.completed}</div>
-                <div className="text-xs text-text-muted">Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-warning-orange">{complianceStats.pending}</div>
-                <div className="text-xs text-text-muted">Pending</div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* Documents Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -275,43 +245,6 @@ const Documents = () => {
         ))}
       </div>
 
-      {/* AI Insights */}
-      <Card className="metro-card border-teal-accent/20">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-teal-accent">
-            <FileText className="w-5 h-5" />
-            <span>AI Document Insights</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <h4 className="font-medium">Duplicate Detection</h4>
-              <div className="p-3 bg-surface-grey rounded-lg">
-                <p className="text-sm text-text-muted">
-                  Found 2 potentially overlapping documents across Safety & Engineering departments
-                </p>
-                <Button size="sm" variant="outline" className="mt-2">
-                  Review Duplicates
-                </Button>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <h4 className="font-medium">Processing Statistics</h4>
-              <div className="p-3 bg-surface-grey rounded-lg">
-                <div className="flex justify-between text-sm mb-1">
-                  <span>Average Processing Time</span>
-                  <span className="font-medium">2.3 minutes</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span>AI Classification Accuracy</span>
-                  <span className="font-medium text-success-green">94.7%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 };

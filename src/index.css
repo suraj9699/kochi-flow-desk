@@ -155,7 +155,7 @@
   
   /* Professional Text Styles */
   .text-heading {
-    @apply text-2xl font-semibold text-foreground;
+    @apply text-2xl font-semibold text-black;
   }
   
   .text-subheading {

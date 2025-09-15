@@ -214,8 +214,7 @@ const Dashboard = () => {
                 </ul>
               </div>
               <Button className="w-full btn-secondary">
-                <span>🔊</span>
-                Read Aloud (English/മലയാളം)
+                View Full Briefing
               </Button>
             </div>
           </CardContent>

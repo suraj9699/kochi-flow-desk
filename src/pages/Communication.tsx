@@ -450,38 +450,6 @@ const Communication = () => {
             </CardContent>
           </Card>
 
-          {/* AI Discussion Summarizer */}
-          <Card className="metro-card border-teal-accent/20">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-teal-accent">
-                <Users className="w-5 h-5" />
-                <span>AI Discussion Insights</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-surface-grey rounded-lg">
-                  <h4 className="font-medium mb-2">Key Discussion Points</h4>
-                  <ul className="text-sm text-text-muted space-y-1">
-                    <li>• Emergency protocol timing needs adjustment for peak hours</li>
-                    <li>• Staff training schedule requires updates</li>
-                    <li>• Budget allocation feedback pending from Operations team</li>
-                  </ul>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-3 bg-surface-grey rounded-lg">
-                    <div className="text-2xl font-bold text-success-green">87%</div>
-                    <div className="text-sm text-text-muted">Resolution Rate</div>
-                  </div>
-                  <div className="text-center p-3 bg-surface-grey rounded-lg">
-                    <div className="text-2xl font-bold text-primary-blue">2.3 days</div>
-                    <div className="text-sm text-text-muted">Avg Response Time</div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
